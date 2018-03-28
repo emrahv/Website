@@ -1,0 +1,11 @@
+<h4 ng-bind="sectionTitle" class=""></h4>
+
+<a href="/{{language}}/product?id={{relatedProduct.id}}" class="col-lg-2 col-md-2 col-xs-4 text-center"
+	ng-repeat="relatedProduct in sectionData" itemprop="isRelatedTo" itemscope itemtype="http://schema.org/Product">
+	
+	<img class="fit-image" style="border-radius:3px;" ng-if="relatedProduct.id>''"
+	ng-src="http:\\{{relatedProduct.brandingPackage.rootURL}}\images\Small\{{relatedProduct.brandingPackage.images[0]}}" itemprop="image">
+	
+	<span ng-bind="relatedProduct.name" itemprop="name"></span>
+	
+</a>

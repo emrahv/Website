@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html ng-app="weziro" lang="en">
+	<head>
+	
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta charset="UTF-8">
+		
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
+		
+		<!-- Bootstrap -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+		<!-- AngularJS & AngularUI -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
+        
+		<!-- Bespoke services -->
+		<script src="/js/mainScript.js"></script>
+					
+		<script src="/js/productController.js"></script>
+		<script src="/js/sectionManager.js"></script>
+		<script src="/js/navbarManager.js"></script>
+        <script src="/js/services.js"></script>
+		<link href="/css/style.css" rel="stylesheet"/>
+						
+	</head>
+
+	<body 
+          ng-controller="productController" 
+          ng-init="pageInit('GB')" 
+          ng-include="'/pages/productIndex.html'">
+	</body>
+
+</html>

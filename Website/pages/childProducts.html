@@ -1,0 +1,25 @@
+<style>
+    .childProduct {
+        margin-bottom:2%;
+        position:relative;
+    }
+
+    .childProductImage{
+       object-fit:scale-down;
+    }
+
+</style>
+
+<div class="childProductContainer container">
+
+	<a href="/{{language}}/product?id={{productData.id}}" class="col-lg-6 col-md-6 col-xs-12 text-center childProduct" 
+		ng-repeat="productData in sectionData" itemprop="isRelatedTo" itemscope itemtype="http://schema.org/Product">
+
+        <img class="fit-image" ng-src="http:\\{{productData.brandingPackage.rootURL}}\images\Medium\{{productData.brandingPackage.images[0]}}"/>
+
+        <h4 class="padding-5 text-center" style="background-color:white;color:black;position:absolute;bottom:0px;opacity:0.8;width:100%"
+            ng-bind="productData.name"></h4>
+			
+	</a>
+
+</div>

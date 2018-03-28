@@ -1,0 +1,19 @@
+<div class="container-fluid border-top border-thick margin-top-1p padding-top-1p" style="background:#f2f2f2;">
+    
+	<div ng-repeat="productGroup in productTree" class="text-center margin-bottom-10 col-lg-3 col-md-3">
+			
+		<a href="/{{currentLanguage}}/product?id={{productGroup.parent.id}}">
+				
+			<strong ng-bind="productGroup.parent.name"></strong>
+				
+			<a href="/{{currentLanguage}}/product?id={{product.parent.id}}" ng-repeat="product in productGroup.children">
+				
+				<div class="text-small" ng-bind="product.parent.name"></div>
+				
+			</a>
+		</a>
+					
+	</div>
+		
+	
+</div>

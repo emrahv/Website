@@ -1,0 +1,11 @@
+<div class="container" ng-class="setClass(product.models.length)" ng-repeat="modelItem in product.models" itemprop="description">
+
+	<h2 class="text-center" style="min-height:2.5em;" ng-bind="modelItem.name"></h2>
+		
+    <mng-section image-carousel-data="modelItem.brandingPackage"></mng-section>
+
+	<div ng-repeat="sectionItem in modelItem.sectionList">
+		<mng-section id="{{sectionItem.section}}" language="{{currentLanguage}}"></mng-section>
+	</div>
+	
+</div>			

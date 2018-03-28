@@ -1,0 +1,33 @@
+﻿<style>
+    .frameFocusText {
+        position: absolute;
+        bottom: 0;
+        background: white;
+        opacity: 0.8;
+        color: #334467;
+    }
+    
+    .largeFrame {
+    height:75vh;
+    position:relative;
+    opacity:0.8;
+    }
+    .largeFrameImage {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    height:100%;
+    object-fit:contain;
+    }
+</style>
+
+<div class="largeFrame">
+
+    <img class="largeFrameImage fit-image" style="border-radius:10px;"
+         ng-src="http:\\{{sectionData.brandingPackage.rootURL}}\images\Large\{{sectionData.brandingPackage.images[0]}}"/>
+
+    <div class="frameFocusText col-lg-12 col-md-12 col-xs-12 text-center">
+        <strong class="font-xlarge" ng-if="sectionData.dataModel.title" ng-bind="sectionData.dataModel.title"></strong>
+        <p class="font-large" ng-repeat="text in sectionData.dataModel.detail" ng-bind="text.text"></p>
+    </div>
+</div>

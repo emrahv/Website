@@ -1,0 +1,58 @@
+<style>
+	h1{text-shadow: 0px 0.5px 1px;}
+</style>
+<mng-navbar language="{{currentLanguage}}"></mng-navbar>
+<!--
+<div ng-include="'/pages/socialMenu.html'"></div>
+-->
+<div class="container" itemscope itemtype="http://schema.org/Product">
+	
+	<h1 itemprop="name" class="" ng-bind="product.name"
+        ng-style="{'text-shadow': '0px 0.5px 1px' + organisation.brandingDetails.colours[0]}"></h1>
+    
+</div>
+
+<div class="container"> 
+		  
+	<div ng-repeat="sectionItem in product.sections">
+		<div ng-if="sectionItem.location=='feature'" class="col-lg-5 col-md-5 col-xs-12 imageBorder padding-5"> 
+            <mng-section data="{{sectionItem.sectionDetails}}" language="{{currentLanguage}}" brandingpackagedata="{{product.brandingPackage}}"></mng-section>
+		</div>
+	</div>
+	
+	<div class="col-lg-7 col-md-7 col-xs-12">
+
+		<div ng-repeat="sectionItem in product.sections">
+			<div ng-if="sectionItem.location=='header'">
+                <mng-section data="{{sectionItem.sectionDetails}}" language="{{currentLanguage}}"></mng-section>
+			</div>
+		</div>
+													
+	</div>
+	
+</div>		
+
+<div class="container">
+	
+	<div ng-repeat="sectionItem in product.sections">
+		<div ng-if="sectionItem.location=='body'">
+            <mng-section data="{{sectionItem.sectionDetails}}" language="{{currentLanguage}}"></mng-section>
+		</div>
+	</div>
+	
+	<div ng-if="product.models">
+		<div ng-include="'/pages/models.html'"></div>
+	</div>
+	
+</div>
+
+<div class="container border-thin border-solid border-grey margin-top-1p">
+	<div ng-repeat="sectionItem in product.sections">
+		<div ng-if="sectionItem.location=='footer'">
+            <mng-section data="{{sectionItem.sectionDetails}}" language="{{currentLanguage}}"></mng-section>
+		</div>
+	</div>
+</div>
+
+<div class="container" ng-include="'/pages/pageFooter.html'"></div>
+<div class="container" ng-include="'/pages/signature.html'"></div>

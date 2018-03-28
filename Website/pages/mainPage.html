@@ -1,0 +1,63 @@
+<style>
+    body {
+        background-color: #334467;
+        padding-top:5vh;
+    }
+    .productGroup:hover {
+        opacity:0.9;
+    }
+    .menuLinkItem {
+        color: white;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: inline-block;
+    }
+    .logoHeader > a{
+    color:white;
+    }
+
+    .menuLinkItem:hover {
+    color:snow;
+    }
+
+</style>
+<div class="visible-xs" >
+    <mng-navbar language="{{currentLanguage}}"></mng-navbar>
+</div>
+<!--
+<div ng-include="'/pages/socialMenu.html'"></div>
+    -->
+
+<div class="container hidden-xs">
+    <div class="text-center logoHeader"><a href="/"><img style="height:13vh;" src="/images/Logo2.PNG" /></a></div>
+    <div class="text-center margin-bottom-1p">
+        <a 
+           href="Product?id={{productGroup.id}}" 
+           class="menuLinkItem" 
+           ng-repeat="productGroup in topLevelProducts" 
+           ng-bind="productGroup.name"></a>
+    </div>
+
+</div>
+<div ng-repeat="sectionData in organisationSections">
+
+    <mng-section data="{{sectionData.section}}" language="{{currentLanguage}}"></mng-section>
+
+</div>
+
+<div class="container margin-bottom-5p" style="background-color:white;margin-top:10vh;padding-top:10vh;border-radius:3px;box-shadow: 0px -2px 4px 4px #888888;">
+
+    <div class="productGroup col-lg-3 col-md-3 col-xs-12 margin-bottom-5p" ng-repeat="productGroup in topLevelProducts">
+	    <a href="Product?id={{productGroup.id}}" style="position:relative">
+                <img ng-src="http:\\{{productGroup.brandingPackage.rootURL}}\images\Medium\{{productGroup.brandingPackage.images[0]}}" 
+                 class="fit-image"/>
+	    </a>
+        <h4 class="padding-5 text-center" style="color:white;opacity:0.6;width:100%;background-color:#334467"
+            ng-bind="productGroup.name"></h4>
+    </div>
+</div>      
+
+<div style="color:white;" ng-include="'/pages/pageFooter.html'"></div>
+<div style="color:white;" ng-include="'/pages/signature.html'"></div>

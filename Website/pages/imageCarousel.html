@@ -1,0 +1,22 @@
+<style>
+    #slider{overflow: hidden;position: relative;}
+    #slider .slides{display: block;margin: 0;padding: 0;}
+    #slider .slide{float: left;list-style-type: none;padding:2px;}
+</style>
+
+<img class="fit-image" 
+	ng-src="http:\\{{sectionData.rootURL}}\images\Large\{{sectionData.images[smallCarousel.currentImage]}}" id="MainImage"/>
+	
+<div id="slider">
+
+    <ul class="slides row">
+
+		<li class="slide col-lg-3 col-md-3 col-xs-4" ng-repeat="imageItem in sectionData.images">
+			<img itemprop="image" class="fit-image" 
+			ng-src="http:\\{{sectionData.rootURL}}\images\Small\{{imageItem}}" alt="Image" ng-click="smallCarousel.setImage($index)"/>
+		</li>
+
+    </ul>
+
+</div>
+
