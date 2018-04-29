@@ -115,11 +115,17 @@
     <Content Include="images\logo2.PNG" />
     <Content Include="index.html" />
     <Content Include="js\DataServices\organiser.js" />
+    <Content Include="js\mainPageController-min.js" />
     <Content Include="js\mainPageController.js" />
+    <Content Include="js\mainScript-min.js" />
     <Content Include="js\mainScript.js" />
+    <Content Include="js\navbarManager-min.js" />
     <Content Include="js\navbarManager.js" />
+    <Content Include="js\productController-min.js" />
     <Content Include="js\productController.js" />
+    <Content Include="js\sectionManager-min.js" />
     <Content Include="js\sectionManager.js" />
+    <Content Include="js\services-min.js" />
     <Content Include="js\services.js" />
     <Content Include="pages\childProducts.html" />
     <Content Include="pages\imageCarousel.html" />

@@ -1,4 +1,4 @@
-myApp.controller('productController', function ($scope, $http, productService, $filter, pageManagement, whiteLabelService) {
+myApp.controller('productController', ['$scope', '$http', 'productService', '$filter', 'pageManagement', 'whiteLabelService', function ($scope, $http, productService, $filter, pageManagement, whiteLabelService) {
 
     $scope.pageInit = function (language) {
 
@@ -79,5 +79,4 @@ myApp.controller('productController', function ($scope, $http, productService, $
         return pageManagement.setClassByWidth(widthData);
     };
     
-}
-);
+}]);

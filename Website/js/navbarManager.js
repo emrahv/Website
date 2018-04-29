@@ -1,4 +1,4 @@
-﻿myApp.directive('mngNavbar', function ($http, productService, whiteLabelService, $filter) {
+﻿myApp.directive('mngNavbar', ['$http', 'productService', 'whiteLabelService', '$filter', function ($http, productService, whiteLabelService, $filter) {
 	
 var template = '<div ng-include="getContentUrl()" ng-repeat="sectionData in [dataModel]"></div>';
 	
@@ -48,4 +48,4 @@ var template = '<div ng-include="getContentUrl()" ng-repeat="sectionData in [dat
 		controller:controller,
 		template:template
     };
-});
+}]);

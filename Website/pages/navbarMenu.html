@@ -1,103 +1,50 @@
 <style>
-	.navbar{background:white;margin-bottom:0px;}
-	.navbar-fixed-top{padding:10px;border-bottom-style:inset;border-bottom-width:2px;}
-	.navbar-fixed-bottom{padding:5px;}
+    .navbar {
+        background: white;
+        margin-bottom: 0px;
+    }
 
-	.navbar-brand{padding:5px;}
-	.navbar-brand > img{height:100%;}
+    .navbar-fixed-top {
+        padding: 10px;
+        border-bottom-style: inset;
+        border-bottom-width: 2px;
+    }
 
-	.contactInfo {margin-right:5px;padding:2px;display:inline-block}
+    .navbar-fixed-bottom {
+        padding: 5px;
+    }
+
+    .navbar-brand {
+        padding: 5px;
+    }
+
+        .navbar-brand > img {
+            height: 100%;
+        }
+
+    .contactInfo {
+        margin-right: 5px;
+        padding: 2px;
+        display: inline-block
+    }
 
     .quickMenu {
         color: white;
         z-index: 1;
-        opacity:0.8;
+        opacity: 0.8;
         border-bottom-width: 0.5px;
         border-bottom-style: solid;
         margin-bottom: 1%;
     }
-    .quickMenu > a {
-        color: white !important;
-    }
+
+        .quickMenu > a {
+            color: white !important;
+        }
+
     #organisationDescription {
         line-height: 50px;
         border-left-style: solid;
         border-left-width: 2px;
         padding-left: 10px
     }
-
-</style>
-
-<nav class="navbar navbar-fixed-top" role="navigation" ng-style="{'border-bottom-color':organisation.brandingDetails.colours[0]}">
-  
-	<div class="container-fluid">
-
-		<a class="navbar-brand" href="/">
-			<img ng-src="\images\logo.PNG" alt=""/>
-		</a>
-		
-		<span class="col-xs-12 col-lg-2 col-md-4 pull-left margin-left-2p text-large hidden-xs" 
-              id="organisationDescription" ng-bind="organisation.organisationDescription" 
-                ng-style="{'color':organisation.brandingDetails.colours[0],'border-left-color':organisation.brandingDetails.colours[0]}">
-		</span>					
-
-		<div class="navbar nav navbar-right" style="position:fixed;top:10px;right:2%;">
-			
-			<button type="button" class="btn btn-default font-xlarge" 
-                    ng-model="collapse" ng-click="collapse=!collapse"
-                    ng-style="{'color':organisation.brandingDetails.colours[0]}">
-				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-			</button>
-
-		</div>			
-		
-	</div>
-	
-	<div class="col-lg-12 col-md-12 col-xs-12 margin-top-1p padding-top-1p text-center" 
-		style="border-top-style:solid;border-top-width:1px;"
-         ng-style="{'border-top-color':organisation.brandingDetails.colours[0]}" ng-show="collapse">
-		
-		<div ng-repeat="productGroup in productTree" style="display:inline-block;vertical-align:top;" class="padding-sides-20">
-			
-			<span class="font-large" ng-bind="productGroup.parent.name"></span> 
-			
-			<div class="" ng-repeat="product in productGroup.children" >
-				<a href="/{{language}}/product?id={{product.parent.id}}" ng-bind="product.parent.name"></a>
-			</div>
-			
-		</div>
-	</div>	
-</nav>
-
-<div class="col-lg-12 col-md-12 col-xs-12 text-center padding-5 hidden-xs quickMenu" 
-     ng-style="{'background-color':organisation.brandingDetails.colours[0],'border-bottom-color':organisation.brandingDetails.colours[0]}">
-
-    <a ng-repeat="productGroup in productTree" class="padding-sides-20" 
-        href="/{{language}}/product?id={{productGroup.parent.id}}" ng-bind="productGroup.parent.name">
-    </a>
-
-</div>	    
-
-<nav class="navbar navbar-fixed-bottom text-center" 
-     ng-style="{'border-top-color':organisation.brandingDetails.colours[0]}">
-	
-    <div ng-repeat="contact in organisation.contactList" class="contactInfo">
-        
-        <a ng-if="contact.contactType=='email'" href="mailto:{{contact.contactInfo}}" target="_blank">
-            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-            <span ng-bind="contact.contactInfo"></span>
-        </a>
-
-        <a ng-if="contact.contactType=='phone'" href="tel:{{contact.contactInfo}}">
-            <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
-            <span ng-bind="convertPhone(contact.contactInfo)"></span>
-        </a>
-        
-        <a ng-if="contact.contactType=='mobilephone'" href="tel:{{contact.contactInfo}}">
-            <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-            <span ng-bind="contact.contactInfo"></span>
-        </a>
-
-    </div>
-
-</nav>
+</style><nav class="navbar navbar-fixed-top" role="navigation" ng-style="{'border-bottom-color':organisation.brandingDetails.colours[0]}"> <div class="container-fluid"><a class="navbar-brand" href="/"><img ng-src="\images\logo.PNG" alt="" /></a><span class="col-xs-12 col-lg-2 col-md-4 pull-left margin-left-2p text-large hidden-xs" id="organisationDescription" ng-bind="organisation.organisationDescription" ng-style="{'color':organisation.brandingDetails.colours[0],'border-left-color':organisation.brandingDetails.colours[0]}"></span><div class="navbar nav navbar-right" style="position:fixed;top:10px;right:2%;"><button type="button" class="btn btn-default font-xlarge" ng-model="collapse" ng-click="collapse=!collapse" ng-style="{'color':organisation.brandingDetails.colours[0]}"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></div></div><div class="col-lg-12 col-md-12 col-xs-12 margin-top-1p padding-top-1p text-center" style="border-top-style:solid;border-top-width:1px;" ng-style="{'border-top-color':organisation.brandingDetails.colours[0]}" ng-show="collapse"><div ng-repeat="productGroup in productTree" style="display:inline-block;vertical-align:top;" class="padding-sides-20"><span class="font-large" ng-bind="productGroup.parent.name"></span> <div class="" ng-repeat="product in productGroup.children"><a href="/{{language}}/product?id={{product.parent.id}}" ng-bind="product.parent.name"></a></div></div></div></nav><div class="col-lg-12 col-md-12 col-xs-12 text-center padding-5 hidden-xs quickMenu" ng-style="{'background-color':organisation.brandingDetails.colours[0],'border-bottom-color':organisation.brandingDetails.colours[0]}"> <a ng-repeat="productGroup in productTree" class="padding-sides-20" href="/{{language}}/product?id={{productGroup.parent.id}}" ng-bind="productGroup.parent.name"> </a></div><nav class="navbar navbar-fixed-bottom text-center" ng-style="{'border-top-color':organisation.brandingDetails.colours[0]}"> <div ng-repeat="contact in organisation.contactList" class="contactInfo"> <a ng-if="contact.contactType=='email'" href="mailto:{{contact.contactInfo}}" target="_blank"> <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <span ng-bind="contact.contactInfo"></span> </a> <a ng-if="contact.contactType=='phone'" href="tel:{{contact.contactInfo}}"> <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> <span ng-bind="convertPhone(contact.contactInfo)"></span> </a> <a ng-if="contact.contactType=='mobilephone'" href="tel:{{contact.contactInfo}}"> <span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <span ng-bind="contact.contactInfo"></span> </a> </div></nav>

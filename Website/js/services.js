@@ -1,4 +1,4 @@
-﻿myApp.factory('productService', function ($http, $filter) {
+﻿myApp.factory('productService', ['$http', '$filter', function ($http, $filter) {
 
     var getProductDetails = function (productId, language) {
 
@@ -192,9 +192,9 @@
         getFullProduct: getFullProduct
     };
 
-});
+}]);
 
-myApp.factory('whiteLabelService', function ($http, $filter) {
+myApp.factory('whiteLabelService', ['$http', '$filter', function ($http, $filter) {
 
     var getBrandDetails = function () {
 
@@ -231,9 +231,9 @@ myApp.factory('whiteLabelService', function ($http, $filter) {
         getBrandDetails: getBrandDetails,
         getOrganisation: getOrganisation
     };
-});
+}]);
 
-myApp.factory('pageManagement', function ($http, $filter) {
+myApp.factory('pageManagement', ['$http', '$filter', function ($http, $filter) {
 
     var getSection = function (sectionId, language) {
         return $http(
@@ -312,4 +312,4 @@ myApp.factory('pageManagement', function ($http, $filter) {
         setClassByWidth: setClassByWidth
     };
 
-});
+}]);
