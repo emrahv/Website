@@ -1,4 +1,4 @@
-﻿myApp.directive('mngSection', ['$http', 'productService', 'pageManagement', '$filter', function ($http, productService, pageManagement, $filter) {
+﻿myApp.directive('mngSection', ['productService', 'pageManagement', '$filter', '$http', function (productService, pageManagement, $filter, $http) {
 	
 var template = '<div ng-include="getContentUrl()" ng-repeat="sectionData in [resultData]"></div>';
 	
